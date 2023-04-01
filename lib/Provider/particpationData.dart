@@ -13,6 +13,7 @@ class ParticipateData {
   bool? isTheCivilSafari;
   bool? isDekathon;
   bool? isOfficeTennis;
+  bool? isScavengerHunt;
 
   //partcipation details game vise
   //for talassh
@@ -122,6 +123,168 @@ class ParticipateData {
   String? TheCivilSafariUser3sem;
   String? TheCivilSafariUser3branch;
   String? TheCivilSafariUser3contactNo;
+
+  //for ScavengerHunt
+  String? ScavengerHuntUser1name;
+  String? ScavengerHuntUser1email;
+  String? ScavengerHuntUser1collegename;
+  String? ScavengerHuntUser1enrollmentnO;
+  String? ScavengerHuntUser1sem;
+  String? ScavengerHuntUser1branch;
+  String? ScavengerHuntUser1contactNo;
+  String? ScavengerHuntUser2name;
+  String? ScavengerHuntUser2email;
+  String? ScavengerHuntUser2collegename;
+  String? ScavengerHuntUser2enrollmentnO;
+  String? ScavengerHuntUser2sem;
+  String? ScavengerHuntUser2branch;
+  String? ScavengerHuntUser2contactNo;
+  String? ScavengerHuntUser3name;
+  String? ScavengerHuntUser3email;
+  String? ScavengerHuntUser3collegename;
+  String? ScavengerHuntUser3enrollmentnO;
+  String? ScavengerHuntUser3sem;
+  String? ScavengerHuntUser3branch;
+  String? ScavengerHuntUser3contactNo;
+
+  //*******************************************************************************************************/
+
+  //For Diploma Games
+  //for check game
+  bool? isGullyCricket;
+  bool? isMultiMediaPrse;
+  bool? isOneMinuteGame;
+  bool? isPosterTalk;
+  bool? isProjecExpo;
+  bool? isSharkTank;
+  bool? isTechnoSketch;
+  bool? isTechOModel;
+  bool? isVadicMaths;
+
+  //for GullyCricket
+  String? GullyCricketUser1name;
+  String? GullyCricketUser1email;
+  String? GullyCricketUser1collegename;
+  String? GullyCricketUser1enrollmentnO;
+  String? GullyCricketUser1sem;
+  String? GullyCricketUser1branch;
+  String? GullyCricketUser1contactNo;
+
+  //for MultiMediaPrse
+  String? MultiMediaPrseUser1name;
+  String? MultiMediaPrseUser1email;
+  String? MultiMediaPrseUser1collegename;
+  String? MultiMediaPrseUser1enrollmentnO;
+  String? MultiMediaPrseUser1sem;
+  String? MultiMediaPrseUser1branch;
+  String? MultiMediaPrseUser1contactNo;
+  String? MultiMediaPrseUser2name;
+  String? MultiMediaPrseUser2email;
+  String? MultiMediaPrseUser2collegename;
+  String? MultiMediaPrseUser2enrollmentnO;
+  String? MultiMediaPrseUser2sem;
+  String? MultiMediaPrseUser2branch;
+  String? MultiMediaPrseUser2contactNo;
+
+  //for OneMinuteGame
+  String? OneMinuteGameUser1name;
+  String? OneMinuteGameUser1email;
+  String? OneMinuteGameUser1collegename;
+  String? OneMinuteGameUser1enrollmentnO;
+  String? OneMinuteGameUser1sem;
+  String? OneMinuteGameUser1branch;
+  String? OneMinuteGameUser1contactNo;
+
+  //for PosterTalk
+  String? PosterTalkUser1name;
+  String? PosterTalkUser1email;
+  String? PosterTalkUser1collegename;
+  String? PosterTalkUser1enrollmentnO;
+  String? PosterTalkUser1sem;
+  String? PosterTalkUser1branch;
+  String? PosterTalkUser1contactNo;
+
+  //for ProjecExpo
+  String? ProjecExpoUser1name;
+  String? ProjecExpoUser1email;
+  String? ProjecExpoUser1collegename;
+  String? ProjecExpoUser1enrollmentnO;
+  String? ProjecExpoUser1sem;
+  String? ProjecExpoUser1branch;
+  String? ProjecExpoUser1contactNo;
+  String? ProjecExpoUser2name;
+  String? ProjecExpoUser2email;
+  String? ProjecExpoUser2collegename;
+  String? ProjecExpoUser2enrollmentnO;
+  String? ProjecExpoUser2sem;
+  String? ProjecExpoUser2branch;
+  String? ProjecExpoUser2contactNo;
+  String? ProjecExpoUser3name;
+  String? ProjecExpoUser3email;
+  String? ProjecExpoUser3collegename;
+  String? ProjecExpoUser3enrollmentnO;
+  String? ProjecExpoUser3sem;
+  String? ProjecExpoUser3branch;
+  String? ProjecExpoUser3contactNo;
+  String? ProjecExpoUser4name;
+  String? ProjecExpoUser4email;
+  String? ProjecExpoUser4collegename;
+  String? ProjecExpoUser4enrollmentnO;
+  String? ProjecExpoUser4sem;
+  String? ProjecExpoUser4branch;
+  String? ProjecExpoUser4contactNo;
+
+  //for SharkTank
+  String? SharkTankUser1name;
+  String? SharkTankUser1email;
+  String? SharkTankUser1collegename;
+  String? SharkTankUser1enrollmentnO;
+  String? SharkTankUser1sem;
+  String? SharkTankUser1branch;
+  String? SharkTankUser1contactNo;
+  String? SharkTankUser2name;
+  String? SharkTankUser2email;
+  String? SharkTankUser2collegename;
+  String? SharkTankUser2enrollmentnO;
+  String? SharkTankUser2sem;
+  String? SharkTankUser2branch;
+  String? SharkTankUser2contactNo;
+
+  //for TechnoSketch
+  String? TechnoSketchUser1name;
+  String? TechnoSketchUser1email;
+  String? TechnoSketchUser1collegename;
+  String? TechnoSketchUser1enrollmentnO;
+  String? TechnoSketchUser1sem;
+  String? TechnoSketchUser1branch;
+  String? TechnoSketchUser1contactNo;
+
+  //for TechOModel
+  String? TechOModelUser1name;
+  String? TechOModelUser1email;
+  String? TechOModelUser1collegename;
+  String? TechOModelUser1enrollmentnO;
+  String? TechOModelUser1sem;
+  String? TechOModelUser1branch;
+  String? TechOModelUser1contactNo;
+  String? TechOModelUser2name;
+  String? TechOModelUser2email;
+  String? TechOModelUser2collegename;
+  String? TechOModelUser2enrollmentnO;
+  String? TechOModelUser2sem;
+  String? TechOModelUser2branch;
+  String? TechOModelUser2contactNo;
+
+  //for VadicMathss
+  String? VadicMathsUser1name;
+  String? VadicMathsUser1email;
+  String? VadicMathsUser1collegename;
+  String? VadicMathsUser1enrollmentnO;
+  String? VadicMathsUser1sem;
+  String? VadicMathsUser1branch;
+  String? VadicMathsUser1contactNo;
+
+  //*******************************************************************************************************/
 
   factory ParticipateData() {
     return _session;

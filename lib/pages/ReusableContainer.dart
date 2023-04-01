@@ -8,6 +8,7 @@ import 'package:hexcolor/hexcolor.dart';
 class ReusableContainer extends StatelessWidget {
   String image;
   String title;
+  String entryfees;
 
   double heading_peding_Left;
   double heading_peding_Top;
@@ -16,6 +17,7 @@ class ReusableContainer extends StatelessWidget {
     Key? key,
     required this.image,
     required this.title,
+    required this.entryfees,
     required this.heading_peding_Left,
     required this.heading_peding_Top,
     required this.function,
@@ -72,7 +74,7 @@ class ReusableContainer extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(left: 15, top: 150),
                     child: Text(
-                      "Entry fee : ₹50",
+                      "Entry fee : ₹${entryfees}",
                       style: TextStyle(
                         fontFamily: 'OpenSanse',
                         fontWeight: FontWeight.w400,

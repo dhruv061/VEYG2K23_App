@@ -33,11 +33,24 @@ class _CartPageState extends State<CartPage> {
     //for diffrent game have diffrent textfields so they have diffrent height
     // define a map with the desired heights for each item name
     Map<String, double> itemHeights = {
+      //Degree Game's
       'Tech-Tainment': height / 0.37,
       'Talassh': height / 0.54,
       'TheCivilSafari': height / 0.37,
       'Dekathon': height / 0.29,
       'OfficeTennis': height / 0.53,
+      'ScavengerHunt': height / 0.37,
+
+      //Diploma Game's
+      'GullyCricket': height / 0.95,
+      'MultiMediaPrse': height / 0.52,
+      'OneMinuteGame': height / 0.95,
+      'PosterTalk': height / 0.95,
+      'ProjecExpo': height / 0.27,
+      'SharkTank': height / 0.52,
+      'TechnoSketch': height / 0.95,
+      'TechOModel': height / 0.52,
+      'VadicMaths': height / 0.95,
     };
 
     //for getting Total Price
@@ -89,18 +102,6 @@ class _CartPageState extends State<CartPage> {
                       // retrieve the height from the map based on the item name
                       double containerHeight =
                           itemHeights[item.name] ?? height / 1.6;
-                      // return ListTile(
-                      //   title: Text(item.name),
-                      //   subtitle:
-                      //       Text('Price: ${item.price}, Quantity: ${item.quantity}'),
-                      //   trailing: IconButton(
-                      //     icon: const Icon(
-                      //       LineIcons.trash,
-                      //       size: 30,
-                      //     ),
-                      //     onPressed: () => cart.removeItem(item),
-                      //   ),
-                      // );
 
                       return SingleChildScrollView(
                         child: Center(
@@ -232,7 +233,64 @@ class _CartPageState extends State<CartPage> {
                                               cart.quantityforOfficeTennis,
                                           GameName: 'OfficeTennis',
                                         ),
-                                      ],
+                                      ] else if (item.name ==
+                                          'ScavengerHunt') ...[
+                                        ReusableFormFields(
+                                          teamSize: 3,
+                                          GameName: 'ScavengerHunt',
+                                        ),
+                                      ]
+
+                                      //for diploma games
+                                      else if (item.name == 'GullyCricket') ...[
+                                        ReusableFormFields(
+                                          teamSize: 1,
+                                          GameName: 'GullyCricket',
+                                        ),
+                                      ] else if (item.name ==
+                                          'MultiMediaPrse') ...[
+                                        ReusableFormFields(
+                                          teamSize: 2,
+                                          GameName: 'MultiMediaPrse',
+                                        ),
+                                      ] else if (item.name ==
+                                          'OneMinuteGame') ...[
+                                        ReusableFormFields(
+                                          teamSize: 1,
+                                          GameName: 'OneMinuteGame',
+                                        ),
+                                      ] else if (item.name == 'PosterTalk') ...[
+                                        ReusableFormFields(
+                                          teamSize: 1,
+                                          GameName: 'PosterTalk',
+                                        ),
+                                      ] else if (item.name == 'ProjecExpo') ...[
+                                        ReusableFormFields(
+                                          teamSize: 4,
+                                          GameName: 'ProjecExpo',
+                                        ),
+                                      ] else if (item.name == 'SharkTank') ...[
+                                        ReusableFormFields(
+                                          teamSize: 2,
+                                          GameName: 'SharkTank',
+                                        ),
+                                      ] else if (item.name ==
+                                          'TechnoSketch') ...[
+                                        ReusableFormFields(
+                                          teamSize: 1,
+                                          GameName: 'TechnoSketch',
+                                        ),
+                                      ] else if (item.name == 'TechOModel') ...[
+                                        ReusableFormFields(
+                                          teamSize: 2,
+                                          GameName: 'TechOModel',
+                                        ),
+                                      ] else if (item.name == 'VadicMaths') ...[
+                                        ReusableFormFields(
+                                          teamSize: 1,
+                                          GameName: 'VadicMaths',
+                                        ),
+                                      ]
                                     ],
                                   ),
                                 ),
@@ -256,17 +314,18 @@ class _CartPageState extends State<CartPage> {
 
                     //Iterate through each item in the cart
                     cart.items.forEach((item) {
+                      //for degree
                       if (item.name == 'Talassh' &&
                           participateData.isTalaash == true) {
                         //If Talaash game details are filled up, increment the count
                         count += 1;
                       } else if (item.name == 'Tech-Tainment' &&
                           participateData.isTechTainment == true) {
-                        //If TechTainment game details are filled up, increment the count
+                        //If Tech-Tainment game details are filled up, increment the count
                         count += 1;
                       } else if (item.name == 'TheCivilSafari' &&
                           participateData.isTheCivilSafari == true) {
-                        //If Dekathon game details are filled up, increment the count
+                        //If TheCivilSafari game details are filled up, increment the count
                         count += 1;
                       } else if (item.name == 'Dekathon' &&
                           participateData.isDekathon == true) {
@@ -274,7 +333,51 @@ class _CartPageState extends State<CartPage> {
                         count += 1;
                       } else if (item.name == 'OfficeTennis' &&
                           participateData.isOfficeTennis == true) {
-                        //If Dekathon game details are filled up, increment the count
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      } else if (item.name == 'ScavengerHunt' &&
+                          participateData.isScavengerHunt == true) {
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      }
+
+                      //for diploma
+
+                      else if (item.name == 'GullyCricket' &&
+                          participateData.isGullyCricket == true) {
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      } else if (item.name == 'MultiMediaPrse' &&
+                          participateData.isMultiMediaPrse == true) {
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      } else if (item.name == 'OneMinuteGame' &&
+                          participateData.isOneMinuteGame == true) {
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      } else if (item.name == 'PosterTalk' &&
+                          participateData.isPosterTalk == true) {
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      } else if (item.name == 'ProjecExpo' &&
+                          participateData.isProjecExpo == true) {
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      } else if (item.name == 'SharkTank' &&
+                          participateData.isSharkTank == true) {
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      } else if (item.name == 'TechnoSketch' &&
+                          participateData.isTechnoSketch == true) {
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      } else if (item.name == 'TechOModel' &&
+                          participateData.isTechOModel == true) {
+                        //If OfficeTennis game details are filled up, increment the count
+                        count += 1;
+                      } else if (item.name == 'VadicMaths' &&
+                          participateData.isVadicMaths == true) {
+                        //If OfficeTennis game details are filled up, increment the count
                         count += 1;
                       } else {
                         //If the details are not filled up, set isallDetailsRight to false and break out of the loop
@@ -795,6 +898,186 @@ class _ReusableFormFieldsState extends State<ReusableFormFields> {
                             openSnackbar(
                                 context,
                                 'Team member added in Game Office Tennis',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for game GullyCricket
+                          if (widget.GameName == 'GullyCricket') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+                            //for store data in in ParticipateData for temporary
+
+                            participateData.GullyCricketUser1name =
+                                leaderNameController.text;
+                            participateData.GullyCricketUser1email =
+                                leaderEmailController.text;
+                            participateData.GullyCricketUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.GullyCricketUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.GullyCricketUser1sem =
+                                leaderSemController.text;
+                            participateData.GullyCricketUser1branch =
+                                leaderBranchController.text;
+                            participateData.GullyCricketUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //set Game
+                            participateData.isGullyCricket = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+                            openSnackbar(
+                                context,
+                                'Team member added in Gully Cricket',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for game OneMinuteGame
+                          if (widget.GameName == 'OneMinuteGame') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+                            //for store data in in ParticipateData for temporary
+
+                            participateData.OneMinuteGameUser1name =
+                                leaderNameController.text;
+                            participateData.OneMinuteGameUser1email =
+                                leaderEmailController.text;
+                            participateData.OneMinuteGameUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.OneMinuteGameUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.OneMinuteGameUser1sem =
+                                leaderSemController.text;
+                            participateData.OneMinuteGameUser1branch =
+                                leaderBranchController.text;
+                            participateData.OneMinuteGameUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //set Game
+                            participateData.isOneMinuteGame = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+                            openSnackbar(
+                                context,
+                                'Team member added in One Minute Game',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for game PosterTalk
+                          if (widget.GameName == 'PosterTalk') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+                            //for store data in in ParticipateData for temporary
+
+                            participateData.PosterTalkUser1name =
+                                leaderNameController.text;
+                            participateData.PosterTalkUser1email =
+                                leaderEmailController.text;
+                            participateData.PosterTalkUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.PosterTalkUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.PosterTalkUser1sem =
+                                leaderSemController.text;
+                            participateData.PosterTalkUser1branch =
+                                leaderBranchController.text;
+                            participateData.PosterTalkUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //set Game
+                            participateData.isPosterTalk = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+                            openSnackbar(
+                                context,
+                                'Team member added in Poster Talk',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for game TechnoSketch
+                          if (widget.GameName == 'TechnoSketch') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+                            //for store data in in ParticipateData for temporary
+
+                            participateData.TechnoSketchUser1name =
+                                leaderNameController.text;
+                            participateData.TechnoSketchUser1email =
+                                leaderEmailController.text;
+                            participateData.TechnoSketchUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.TechnoSketchUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.TechnoSketchUser1sem =
+                                leaderSemController.text;
+                            participateData.TechnoSketchUser1branch =
+                                leaderBranchController.text;
+                            participateData.TechnoSketchUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //set Game
+                            participateData.isTechnoSketch = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+                            openSnackbar(
+                                context,
+                                'Team member added in Techno Sketch',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for game VadicMaths
+                          if (widget.GameName == 'VadicMaths') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+                            //for store data in in ParticipateData for temporary
+
+                            participateData.VadicMathsUser1name =
+                                leaderNameController.text;
+                            participateData.VadicMathsUser1email =
+                                leaderEmailController.text;
+                            participateData.VadicMathsUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.VadicMathsUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.VadicMathsUser1sem =
+                                leaderSemController.text;
+                            participateData.VadicMathsUser1branch =
+                                leaderBranchController.text;
+                            participateData.VadicMathsUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //set Game
+                            participateData.isVadicMaths = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+                            openSnackbar(
+                                context,
+                                'Team member added in Vadic Maths',
                                 Color.fromARGB(255, 70, 213, 92));
                           }
                         } else {
@@ -1421,6 +1704,7 @@ class _ReusableFormFieldsState extends State<ReusableFormFields> {
                                 'Team member added in Game Talaash',
                                 Color.fromARGB(255, 70, 213, 92));
                           }
+
                           //for game OfficeTennis --> ofice tennish for 2 players
                           if (widget.GameName == 'OfficeTennis') {
                             //disable btn
@@ -1471,6 +1755,165 @@ class _ReusableFormFieldsState extends State<ReusableFormFields> {
                             openSnackbar(
                                 context,
                                 'Team member added in Game Office Tennis',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for game MultiMediaPrse
+                          if (widget.GameName == 'MultiMediaPrse') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+                            //for store data in in ParticipateData for temporary
+
+                            //for team member-1
+                            participateData.MultiMediaPrseUser1name =
+                                leaderNameController.text;
+                            participateData.MultiMediaPrseUser1email =
+                                leaderEmailController.text;
+                            participateData.MultiMediaPrseUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.MultiMediaPrseUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.MultiMediaPrseUser1sem =
+                                leaderSemController.text;
+                            participateData.MultiMediaPrseUser1branch =
+                                leaderBranchController.text;
+                            participateData.MultiMediaPrseUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //for team member-2
+                            participateData.MultiMediaPrseUser2name =
+                                player2Controller.text;
+                            participateData.MultiMediaPrseUser2email =
+                                player2EmailController.text;
+                            participateData.MultiMediaPrseUser2collegename =
+                                player2CollegeNameController.text;
+                            participateData.MultiMediaPrseUser2enrollmentnO =
+                                player2EnrollmentNoController.text;
+                            participateData.MultiMediaPrseUser2sem =
+                                player2SemController.text;
+                            participateData.MultiMediaPrseUser2branch =
+                                player2BranchController.text;
+                            participateData.MultiMediaPrseUser2contactNo =
+                                player2ContectNoController.text;
+
+                            //set Game
+                            participateData.isMultiMediaPrse = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+                            openSnackbar(
+                                context,
+                                'Team member added in Multi Media Prse.',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for game SharkTank
+                          if (widget.GameName == 'SharkTank') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+                            //for store data in in ParticipateData for temporary
+
+                            //for team member-1
+                            participateData.SharkTankUser1name =
+                                leaderNameController.text;
+                            participateData.SharkTankUser1email =
+                                leaderEmailController.text;
+                            participateData.SharkTankUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.SharkTankUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.SharkTankUser1sem =
+                                leaderSemController.text;
+                            participateData.SharkTankUser1branch =
+                                leaderBranchController.text;
+                            participateData.SharkTankUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //for team member-2
+                            participateData.SharkTankUser2name =
+                                player2Controller.text;
+                            participateData.SharkTankUser2email =
+                                player2EmailController.text;
+                            participateData.SharkTankUser2collegename =
+                                player2CollegeNameController.text;
+                            participateData.SharkTankUser2enrollmentnO =
+                                player2EnrollmentNoController.text;
+                            participateData.SharkTankUser2sem =
+                                player2SemController.text;
+                            participateData.SharkTankUser2branch =
+                                player2BranchController.text;
+                            participateData.SharkTankUser2contactNo =
+                                player2ContectNoController.text;
+
+                            //set Game
+                            participateData.isSharkTank = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+                            openSnackbar(
+                                context,
+                                'Team member added in Shark Tank',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for game TechOModel
+                          if (widget.GameName == 'TechOModel') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+                            //for store data in in ParticipateData for temporary
+
+                            //for team member-1
+                            participateData.TechOModelUser1name =
+                                leaderNameController.text;
+                            participateData.TechOModelUser1email =
+                                leaderEmailController.text;
+                            participateData.TechOModelUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.TechOModelUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.TechOModelUser1sem =
+                                leaderSemController.text;
+                            participateData.TechOModelUser1branch =
+                                leaderBranchController.text;
+                            participateData.TechOModelUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //for team member-2
+                            participateData.TechOModelUser2name =
+                                player2Controller.text;
+                            participateData.TechOModelUser2email =
+                                player2EmailController.text;
+                            participateData.TechOModelUser2collegename =
+                                player2CollegeNameController.text;
+                            participateData.TechOModelUser2enrollmentnO =
+                                player2EnrollmentNoController.text;
+                            participateData.TechOModelUser2sem =
+                                player2SemController.text;
+                            participateData.TechOModelUser2branch =
+                                player2BranchController.text;
+                            participateData.TechOModelUser2contactNo =
+                                player2ContectNoController.text;
+
+                            //set Game
+                            participateData.isTechOModel = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+                            openSnackbar(
+                                context,
+                                'Team member added in Tech O Model',
                                 Color.fromARGB(255, 70, 213, 92));
                           }
                         } else {
@@ -2432,6 +2875,76 @@ class _ReusableFormFieldsState extends State<ReusableFormFields> {
                             openSnackbar(
                                 context,
                                 'Team member added in Game The Civil Safari',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for ScavengerHunt
+                          if (widget.GameName == 'ScavengerHunt') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+
+                            //for store data in in ParticipateData for temporary
+                            //for team member-1
+                            participateData.ScavengerHuntUser1name =
+                                leaderNameController.text;
+                            participateData.ScavengerHuntUser1email =
+                                leaderEmailController.text;
+                            participateData.ScavengerHuntUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.ScavengerHuntUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.ScavengerHuntUser1sem =
+                                leaderSemController.text;
+                            participateData.ScavengerHuntUser1branch =
+                                leaderBranchController.text;
+                            participateData.ScavengerHuntUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //for team member-2
+                            participateData.ScavengerHuntUser2name =
+                                player2Controller.text;
+                            participateData.ScavengerHuntUser2email =
+                                player2EmailController.text;
+                            participateData.ScavengerHuntUser2collegename =
+                                player2CollegeNameController.text;
+                            participateData.ScavengerHuntUser2enrollmentnO =
+                                player2EnrollmentNoController.text;
+                            participateData.ScavengerHuntUser2sem =
+                                player2SemController.text;
+                            participateData.ScavengerHuntUser2branch =
+                                player2BranchController.text;
+                            participateData.ScavengerHuntUser2contactNo =
+                                player2ContectNoController.text;
+
+                            //for team member-3
+                            participateData.ScavengerHuntUser3name =
+                                player3Controller.text;
+                            participateData.ScavengerHuntUser3email =
+                                player3EmailController.text;
+                            participateData.ScavengerHuntUser3collegename =
+                                player3CollegeNameController.text;
+                            participateData.ScavengerHuntUser3enrollmentnO =
+                                player3EnrollmentNoController.text;
+                            participateData.ScavengerHuntUser3sem =
+                                player3SemController.text;
+                            participateData.ScavengerHuntUser3branch =
+                                player3BranchController.text;
+                            participateData.ScavengerHuntUser3contactNo =
+                                player3ContectNoController.text;
+
+                            //set Game
+                            participateData.isScavengerHunt = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+
+                            openSnackbar(
+                                context,
+                                'Team member added in Game Scavenger Hunt',
                                 Color.fromARGB(255, 70, 213, 92));
                           }
                         } else {
@@ -3588,6 +4101,91 @@ class _ReusableFormFieldsState extends State<ReusableFormFields> {
                             openSnackbar(
                                 context,
                                 'Team member added in Game Dekathon',
+                                Color.fromARGB(255, 70, 213, 92));
+                          }
+
+                          //for game ProjecExpo
+                          if (widget.GameName == 'ProjecExpo') {
+                            //disable btn
+                            setState(() {
+                              _isAddmemberBtnDiasble = true;
+                            });
+                            print("Student added");
+                            //for store data in in ParticipateData for temporary
+
+                            //for team member-1
+                            participateData.ProjecExpoUser1name =
+                                leaderNameController.text;
+                            participateData.ProjecExpoUser1email =
+                                leaderEmailController.text;
+                            participateData.ProjecExpoUser1collegename =
+                                leaderCollegeNameController.text;
+                            participateData.ProjecExpoUser1enrollmentnO =
+                                leaderEnrollmentNoController.text;
+                            participateData.ProjecExpoUser1sem =
+                                leaderSemController.text;
+                            participateData.ProjecExpoUser1branch =
+                                leaderBranchController.text;
+                            participateData.ProjecExpoUser1contactNo =
+                                leaderContectNoController.text;
+
+                            //for team member-2
+                            participateData.ProjecExpoUser2name =
+                                player2Controller.text;
+                            participateData.ProjecExpoUser2email =
+                                player2EmailController.text;
+                            participateData.ProjecExpoUser2collegename =
+                                player2CollegeNameController.text;
+                            participateData.ProjecExpoUser2enrollmentnO =
+                                player2EnrollmentNoController.text;
+                            participateData.ProjecExpoUser2sem =
+                                player2SemController.text;
+                            participateData.ProjecExpoUser2branch =
+                                player2BranchController.text;
+                            participateData.ProjecExpoUser2contactNo =
+                                player2ContectNoController.text;
+
+                            //for team member-3
+                            participateData.ProjecExpoUser3name =
+                                player3Controller.text;
+                            participateData.ProjecExpoUser3email =
+                                player3EmailController.text;
+                            participateData.ProjecExpoUser3collegename =
+                                player3CollegeNameController.text;
+                            participateData.ProjecExpoUser3enrollmentnO =
+                                player3EnrollmentNoController.text;
+                            participateData.ProjecExpoUser3sem =
+                                player3SemController.text;
+                            participateData.ProjecExpoUser3branch =
+                                player3BranchController.text;
+                            participateData.ProjecExpoUser3contactNo =
+                                player3ContectNoController.text;
+
+                            //for team member-4
+                            participateData.ProjecExpoUser4name =
+                                player4Controller.text;
+                            participateData.ProjecExpoUser4email =
+                                player4EmailController.text;
+                            participateData.ProjecExpoUser4collegename =
+                                player4CollegeNameController.text;
+                            participateData.ProjecExpoUser4enrollmentnO =
+                                player4EnrollmentNoController.text;
+                            participateData.ProjecExpoUser4sem =
+                                player4SemController.text;
+                            participateData.ProjecExpoUser4branch =
+                                player4BranchController.text;
+                            participateData.ProjecExpoUser4contactNo =
+                                player4ContectNoController.text;
+
+                            //set Game
+                            participateData.isProjecExpo = true;
+
+                            //incremt game
+                            participateData.totalGame +=
+                                participateData.totalGame + 1;
+                            openSnackbar(
+                                context,
+                                'Team member added in Projec Expo',
                                 Color.fromARGB(255, 70, 213, 92));
                           }
                         } else {

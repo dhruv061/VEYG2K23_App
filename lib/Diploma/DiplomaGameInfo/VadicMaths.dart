@@ -31,7 +31,7 @@ class _VadicMathsState extends State<VadicMaths> {
     //add to cart
     var cart = context.read<CartModel>();
     cart.addItem(
-      CartItem(name: "Vadic Maths", price: 50, quantity: 1),
+      CartItem(name: "VadicMaths", price: 10, quantity: 1),
     );
   }
 
@@ -110,7 +110,7 @@ class _VadicMathsState extends State<VadicMaths> {
                   ),
                   child: const Center(
                     child: Text(
-                      "Vadic Maths",
+                      "Vedic Maths",
                       style: TextStyle(
                         fontFamily: 'OpenSanse',
                         fontWeight: FontWeight.w600,

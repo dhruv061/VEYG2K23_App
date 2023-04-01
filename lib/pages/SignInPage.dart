@@ -22,7 +22,8 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  //THIS IS FOR PROFILE PAGE
+  //for loading indicator
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -33,9 +34,6 @@ class _SignInPageState extends State<SignInPage> {
   //THIS ALL FOR LOGIN PAGE
   //for check validation
   final formKey = GlobalKey<FormState>();
-
-  //for check loding
-  bool isLoading = false;
 
   //Text Editing Controller
   final emailController = TextEditingController();
@@ -97,16 +95,19 @@ class _SignInPageState extends State<SignInPage> {
                 child: Column(
                   children: [
                     //Logo
-                    const Padding(
+                    Padding(
                       padding: const EdgeInsets.only(top: 90),
-                      child: Text(
-                        "Logo",
-                        style: TextStyle(
-                          fontFamily: 'OpenSanse',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 35,
-                          color: Colors.black,
+                      child: Container(
+                        height: height / 8,
+                        width: width / 2.8,
+                        decoration: BoxDecoration(
+                          // color: Colors.white,
+                          image: const DecorationImage(
+                            image: AssetImage("assets/icons/logo2.png"),
+                            fit: BoxFit.cover,
+                          ),
                         ),
+                        child: Container(),
                       ),
                     ),
 
@@ -333,6 +334,7 @@ class _SignInPageState extends State<SignInPage> {
                                             width: 27,
                                             child: CircularProgressIndicator(
                                               color: Colors.white,
+                                              strokeWidth: 3,
                                             ),
                                           ),
                                           SizedBox(width: 18),
@@ -341,7 +343,7 @@ class _SignInPageState extends State<SignInPage> {
                                             style: TextStyle(
                                               fontFamily: 'OpenSanse',
                                               fontWeight: FontWeight.w500,
-                                              fontSize: 23,
+                                              fontSize: 20,
                                               color: Colors.white,
                                             ),
                                           )
@@ -349,7 +351,9 @@ class _SignInPageState extends State<SignInPage> {
                                       )
                                     : const Text("Sign in"),
                                 onPressed: () {
-                                  if (isLoading) return;
+                                  setState(() {
+                                    isLoading = true;
+                                  });
 
                                   //check for drop down box
                                   if (degreeORdiplomaController == null) {
@@ -357,22 +361,21 @@ class _SignInPageState extends State<SignInPage> {
                                         context,
                                         'Please fill up all the blocks',
                                         Colors.red);
-                                  }
-
-                                  if (formKey.currentState!.validate() &&
-                                      degreeORdiplomaController != null) {
-                                    //start loading
-                                    setState(() {
-                                      isLoading = true;
-                                    });
-
-                                    //for mongoDb
-                                    signInUser();
-
                                     //end loading
                                     setState(() {
                                       isLoading = false;
                                     });
+                                  }
+
+                                  if (formKey.currentState!.validate() &&
+                                      degreeORdiplomaController != null) {
+                                    Future.delayed(
+                                      Duration(seconds: 3),
+                                      () {
+                                        //for mongoDb
+                                        signInUser();
+                                      },
+                                    );
                                   }
                                 },
                               ),

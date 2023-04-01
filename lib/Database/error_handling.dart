@@ -19,7 +19,7 @@ void hhtpErrorHanle({
       onSuccess();
       break;
 
-    //for signin we get 201 success code
+    //for signin we get 200 success code
     case 200:
       onSuccess();
       break;

@@ -31,7 +31,7 @@ class _TechOModelState extends State<TechOModel> {
     //add to cart
     var cart = context.read<CartModel>();
     cart.addItem(
-      CartItem(name: "TechOModel", price: 50, quantity: 1),
+      CartItem(name: "TechOModel", price: 30, quantity: 2),
     );
   }
 

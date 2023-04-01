@@ -17,6 +17,7 @@ class UserProvider extends ChangeNotifier {
     branch: '',
     sem: '',
     EnNO: '',
+    visiblepassword: '',
     password: '',
     token: '',
   );
@@ -56,6 +57,7 @@ class UserProvider extends ChangeNotifier {
       sem: '',
       EnNO: '',
       password: '',
+      visiblepassword: '',
       token: '',
     );
 

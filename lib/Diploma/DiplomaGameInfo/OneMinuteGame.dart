@@ -31,7 +31,7 @@ class _OneMinuteGameState extends State<OneMinuteGame> {
     //add to cart
     var cart = context.read<CartModel>();
     cart.addItem(
-      CartItem(name: "One Minute Game", price: 50, quantity: 1),
+      CartItem(name: "OneMinuteGame", price: 20, quantity: 1),
     );
   }
 

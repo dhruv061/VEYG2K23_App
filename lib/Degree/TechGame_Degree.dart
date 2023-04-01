@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:vegy2023/Degree/DegreeGameInfo/ScavengerHunt.dart';
 import 'package:vegy2023/Degree/DegreeGameInfo/TheCivilSafari.dart';
 
 import '../pages/Nextscreen.dart';
@@ -24,20 +25,21 @@ class _TechGame_DegreeState extends State<TechGame_Degree> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: HexColor("#F0F0F2"),
-        body: SingleChildScrollView(
-          child: Center(
-            child: Container(
-              // color: Colors.yellow,
-              height: height,
-              width: width / 1.05,
-              child: Center(
+        body: Center(
+          child: Container(
+            // color: Colors.yellow,
+            height: height,
+            width: width / 1.05,
+            child: Center(
+              child: SingleChildScrollView(
                 child: Column(
                   children: [
                     //Games
                     //techtainment
                     ReusableContainer(
                       image: "assets/images/techtainment.jpg",
-                      title: "Tech-tainment",
+                      title: "CE/IT- Tech-tainment",
+                      entryfees: "60",
                       heading_peding_Left: 14,
                       heading_peding_Top: 110,
                       function: () {
@@ -48,9 +50,10 @@ class _TechGame_DegreeState extends State<TechGame_Degree> {
                     //Talash
                     ReusableContainer(
                       image: "assets/images/talash.jpg",
-                      title: "Talaash-the technical treasure hunt",
+                      title: "CE/IT- Talaash-the technical treasure hunt",
+                      entryfees: "60",
                       heading_peding_Left: 14,
-                      heading_peding_Top: 70,
+                      heading_peding_Top: 40,
                       function: () {
                         nextScreen(context, Talassh());
                       },
@@ -59,13 +62,28 @@ class _TechGame_DegreeState extends State<TechGame_Degree> {
                     //The civil Safari
                     ReusableContainer(
                       image: "assets/images/thecivilsafari.jpg",
-                      title: "The Civil Safari",
+                      title: "CL- The Civil Safari",
+                      entryfees: "60",
                       heading_peding_Left: 14,
                       heading_peding_Top: 110,
                       function: () {
                         nextScreen(context, TheCivilSafari());
                       },
                     ),
+
+                    //MechanicalDroids
+                    ReusableContainer(
+                      image: "assets/images/MechanicalDroids.jpg",
+                      title: "ME- Scavenger Hunt",
+                      entryfees: "60",
+                      heading_peding_Left: 14,
+                      heading_peding_Top: 110,
+                      function: () {
+                        nextScreen(context, ScavengerHunt());
+                      },
+                    ),
+
+                    SizedBox(height: 50),
                   ],
                 ),
               ),

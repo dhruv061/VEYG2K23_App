@@ -10,12 +10,13 @@ import 'package:vegy2023/pages/SignInPage.dart';
 import 'package:vegy2023/pages/SplachScreen.dart';
 
 import 'Provider/InternetProvider.dart';
+
 import 'Provider/userprovider.dart';
 import 'Services/authServices.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   runApp(const MyApp());
 }
 
@@ -27,6 +28,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

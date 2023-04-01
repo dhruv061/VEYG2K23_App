@@ -34,7 +34,7 @@ class _OfficeTennisState extends State<OfficeTennis> {
     cart.addItem(
       CartItem(
           name: "OfficeTennis",
-          price: 50,
+          price: 60,
           quantity: int.parse(teamSize_OfficeTennisController!)),
     );
   }
@@ -177,6 +177,22 @@ class _OfficeTennisState extends State<OfficeTennis> {
                         ),
                       ),
 
+                      //Entry Fee
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 18, top: 12),
+                          child: Text(
+                            "Entry Fee: 60",
+                            style: TextStyle(
+                              fontFamily: 'OpenSanse',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+
                       //No. of Levels
                       Align(
                         alignment: Alignment.topLeft,
@@ -188,6 +204,23 @@ class _OfficeTennisState extends State<OfficeTennis> {
                               fontFamily: 'OpenSanse',
                               fontWeight: FontWeight.w500,
                               fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      //prize money
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 18, top: 12),
+                          child: Text(
+                            "Prize money is based on the number of teams that have registered for any event.",
+                            style: TextStyle(
+                              fontFamily: 'OpenSanse',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.red,
+                              fontSize: 15,
                             ),
                           ),
                         ),

@@ -1,7 +1,8 @@
 //This class help full to store payment History
 class PaymentHistory {
   String? userId;
-  String? paymentId;
+  String? cuponCode;
+  String? paymentStatus;
   String? amount;
   String? timeDate;
   String? playername;
@@ -11,7 +12,8 @@ class PaymentHistory {
 
   PaymentHistory({
     this.userId,
-    this.paymentId,
+    this.cuponCode,
+    this.paymentStatus,
     this.amount,
     this.timeDate,
     this.playername,
@@ -22,7 +24,8 @@ class PaymentHistory {
 
   PaymentHistory.fromJson(Map<dynamic, dynamic> json) {
     userId = json['userId'];
-    paymentId = json['paymentId'];
+    cuponCode = json['cuponCode'];
+    paymentStatus = json['paymentStatus'];
     amount = json['amount'];
     timeDate = json['timeDate'];
     playername = json['playername'];
@@ -34,7 +37,8 @@ class PaymentHistory {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['userId'] = this.userId;
-    data['paymentId'] = this.paymentId;
+    data['cuponCode'] = this.cuponCode;
+    data['paymentStatus'] = this.paymentStatus;
     data['amount'] = this.amount;
     data['timeDate'] = this.timeDate;
     data['playername'] = this.playername;

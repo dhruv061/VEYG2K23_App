@@ -1,12 +1,18 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:vegy2023/Diploma/DiplomaGames.dart';
 import 'package:vegy2023/Provider/userprovider.dart';
+import 'package:vegy2023/pages/ContactusPage.dart';
 
 import 'package:vegy2023/pages/Nextscreen.dart';
+import 'package:vegy2023/pages/ProcessDescPage.dart';
 
 import '../Degree/DegreeGames.dart';
 import '../Provider/particpationData.dart';
@@ -193,7 +199,7 @@ class _HomePageState extends State<HomePage> {
 
                     const SizedBox(height: 15),
 
-                    //3-boxes-- game - pricemoney - how
+                    //3-boxes --> Regestrasion Process,prize money,Contact Us
                     ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
@@ -202,137 +208,170 @@ class _HomePageState extends State<HomePage> {
                               bottom: 425, left: 5, right: 10),
                           child: Row(
                             children: [
-                              //game
-                              Padding(
-                                padding: const EdgeInsets.only(left: 15),
-                                child: Container(
-                                  height: height / 5,
-                                  width: width / 2.7,
-                                  decoration: BoxDecoration(
-                                    color: HexColor("#FFFFFF"),
-                                    borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(23),
-                                        topRight: Radius.circular(23),
-                                        bottomLeft: Radius.circular(23),
-                                        bottomRight: Radius.circular(23)),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        spreadRadius: 1,
-                                        blurRadius: 4,
-                                        offset: Offset(1.4, 1.2),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Stack(
-                                    children: const [
-                                      Image(
-                                        image:
-                                            AssetImage("assets/icons/game.gif"),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.only(top: 115, left: 35),
-                                        child: Text(
-                                          "Games",
-                                          style: TextStyle(
-                                            fontFamily: 'OpenSanse',
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 18,
-                                          ),
+                              //Details
+                              InkWell(
+                                onTap: () {
+                                  //goto Regestrasion Process page
+                                  nextScreen(context, ProcessDescPage());
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 15),
+                                  child: Container(
+                                    height: height / 5,
+                                    width: width / 2.7,
+                                    decoration: BoxDecoration(
+                                      color: HexColor("#FFFFFF"),
+                                      borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(23),
+                                          topRight: Radius.circular(23),
+                                          bottomLeft: Radius.circular(23),
+                                          bottomRight: Radius.circular(23)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 1,
+                                          blurRadius: 4,
+                                          offset: Offset(1.4, 1.2),
                                         ),
-                                      )
-                                    ],
+                                      ],
+                                    ),
+                                    child: Stack(
+                                      children: const [
+                                        Image(
+                                          image: AssetImage(
+                                              "assets/icons/game.gif"),
+                                        ),
+                                        Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 100, left: 8),
+                                            child: Text(
+                                              "Details",
+                                              style: TextStyle(
+                                                fontFamily: 'OpenSanse',
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
 
-                              //price money
-                              Padding(
-                                padding: const EdgeInsets.only(left: 15),
-                                child: Container(
-                                  height: height / 5,
-                                  width: width / 2.7,
-                                  decoration: BoxDecoration(
-                                    color: HexColor("#FFFFFF"),
-                                    borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(23),
-                                        topRight: Radius.circular(23),
-                                        bottomLeft: Radius.circular(23),
-                                        bottomRight: Radius.circular(23)),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        spreadRadius: 1,
-                                        blurRadius: 4,
-                                        offset: Offset(1.4, 1.2),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Stack(
-                                    children: const [
-                                      Image(
-                                        image: AssetImage(
-                                            "assets/icons/trophy.gif"),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.only(top: 115, left: 13),
-                                        child: Text(
-                                          "Price money",
-                                          style: TextStyle(
-                                            fontFamily: 'OpenSanse',
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 18,
-                                          ),
+                              //prize money
+                              InkWell(
+                                onTap: () {
+                                  //show pop-up box
+                                  QuickAlert.show(
+                                    context: context,
+                                    type: QuickAlertType.info,
+                                    title: "Prize money",
+                                    text:
+                                        "Prize money is based on the number of teams that have registered for any event.",
+                                    confirmBtnText: "okay",
+                                    confirmBtnColor:
+                                        Color.fromARGB(255, 133, 81, 254),
+                                    width: 25,
+                                  );
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 15),
+                                  child: Container(
+                                    height: height / 5,
+                                    width: width / 2.7,
+                                    decoration: BoxDecoration(
+                                      color: HexColor("#FFFFFF"),
+                                      borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(23),
+                                          topRight: Radius.circular(23),
+                                          bottomLeft: Radius.circular(23),
+                                          bottomRight: Radius.circular(23)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 1,
+                                          blurRadius: 4,
+                                          offset: Offset(1.4, 1.2),
                                         ),
-                                      )
-                                    ],
+                                      ],
+                                    ),
+                                    child: Stack(
+                                      children: const [
+                                        Image(
+                                          image: AssetImage(
+                                              "assets/icons/trophy.gif"),
+                                        ),
+                                        Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 105, left: 8),
+                                            child: Text(
+                                              "Prize money",
+                                              style: TextStyle(
+                                                fontFamily: 'OpenSanse',
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
 
-                              //How?
-                              Padding(
-                                padding: const EdgeInsets.only(left: 15),
-                                child: Container(
-                                  height: height / 5,
-                                  width: width / 2.7,
-                                  decoration: BoxDecoration(
-                                    color: HexColor("#FFFFFF"),
-                                    borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(23),
-                                        topRight: Radius.circular(23),
-                                        bottomLeft: Radius.circular(23),
-                                        bottomRight: Radius.circular(23)),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        spreadRadius: 1,
-                                        blurRadius: 4,
-                                        offset: Offset(1.4, 1.2),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Stack(
-                                    children: const [
-                                      Image(
-                                        image:
-                                            AssetImage("assets/icons/how.gif"),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.only(top: 116, left: 39),
-                                        child: Text(
-                                          "How?",
-                                          style: TextStyle(
-                                            fontFamily: 'OpenSanse',
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 19,
-                                          ),
+                              //Contact Us
+                              InkWell(
+                                onTap: () {
+                                  //goto Contact Us page
+                                  nextScreen(context, ContactUsPage());
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 15),
+                                  child: Container(
+                                    height: height / 5,
+                                    width: width / 2.7,
+                                    decoration: BoxDecoration(
+                                      color: HexColor("#FFFFFF"),
+                                      borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(23),
+                                          topRight: Radius.circular(23),
+                                          bottomLeft: Radius.circular(23),
+                                          bottomRight: Radius.circular(23)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 1,
+                                          blurRadius: 4,
+                                          offset: Offset(1.4, 1.2),
                                         ),
-                                      )
-                                    ],
+                                      ],
+                                    ),
+                                    child: Stack(
+                                      children: const [
+                                        Image(
+                                          image: AssetImage(
+                                              "assets/icons/how.gif"),
+                                        ),
+                                        Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.only(top: 100),
+                                            child: Text(
+                                              "Contact us",
+                                              style: TextStyle(
+                                                fontFamily: 'OpenSanse',
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 19,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -538,15 +577,29 @@ class _HomePageState extends State<HomePage> {
               //     // print(participateData.talaashUser2name);
               //     //for getting Total Price
 
-              //     var cart = Provider.of<CartModel>(context, listen: false);
-              //     int money = cart.totalPrice.round();
-              //     double PayingAmount =
-              //         double.parse("${cart.totalPrice}.round()");
-              //     double PayingAmount2 = double.parse("${money}");
+              //     // var cart = Provider.of<CartModel>(context, listen: false);
+              //     // int money = cart.totalPrice.round();
+              //     // double PayingAmount =
+              //     //     double.parse("${cart.totalPrice}.round()");
+              //     // double PayingAmount2 = double.parse("${money}");
 
-              //     print("Price is : " + PayingAmount.toString());
-              //     print("after parse Price is : " + PayingAmount2.toString());
-              //     print("Money Price is : " + money.toString());
+              //     // print("Price is : " + PayingAmount.toString());
+              //     // print("after parse Price is : " + PayingAmount2.toString());
+              //     // print("Money Price is : " + money.toString());
+
+              //     // generateUniqueCouponCode(user.uid);
+              //     // print("copen code is : ${coupenCode}");
+
+              //     // //show pop-up box
+              //     // QuickAlert.show(
+              //     //   context: context,
+              //     //   type: QuickAlertType.confirm,
+              //     //   title: "Account Created",
+              //     //   text: "Please SignIn to add game",
+              //     //   confirmBtnText: "okay",
+              //     //   confirmBtnColor: Color.fromARGB(255, 31, 213, 223),
+              //     //   width: 25,
+              //     // );
               //   },
               // ),
             ],

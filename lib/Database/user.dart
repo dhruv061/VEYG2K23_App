@@ -13,6 +13,7 @@ class User {
   final String branch;
   final String sem;
   final String EnNO;
+  final String visiblepassword;
   final String password;
   final String token;
 
@@ -26,6 +27,7 @@ class User {
     required this.branch,
     required this.sem,
     required this.EnNO,
+    required this.visiblepassword,
     required this.password,
     required this.token,
   });
@@ -41,6 +43,7 @@ class User {
       'branch': branch,
       'sem': sem,
       'EnNO': EnNO,
+      'visiblepassword': visiblepassword,
       'password': password,
       'token': token,
     };
@@ -57,6 +60,7 @@ class User {
       branch: map['branch'] as String,
       sem: map['sem'] as String,
       EnNO: map['EnNO'] as String,
+      visiblepassword: map['visiblepassword'] as String,
       password: map['password'] as String,
       token: map['token'] as String,
     );

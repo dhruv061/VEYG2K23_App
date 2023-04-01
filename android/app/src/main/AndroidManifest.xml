@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.vegy2023">
+        <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="VEYG 2k23"
         android:name="${applicationName}"

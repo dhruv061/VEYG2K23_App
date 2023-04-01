@@ -34,6 +34,7 @@ class _NonTechGame_DegreeState extends State<NonTechGame_Degree> {
                 ReusableContainer(
                   image: "assets/images/deckathon.png",
                   title: "Dekathon",
+                  entryfees: "60",
                   heading_peding_Left: 14,
                   heading_peding_Top: 110,
                   function: () {
@@ -45,6 +46,7 @@ class _NonTechGame_DegreeState extends State<NonTechGame_Degree> {
                 ReusableContainer(
                   image: "assets/images/officetennis.jpg",
                   title: "Office Tennis",
+                  entryfees: "60",
                   heading_peding_Left: 14,
                   heading_peding_Top: 110,
                   function: () {

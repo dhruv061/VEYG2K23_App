@@ -13,13 +13,13 @@ class CartModel extends ChangeNotifier {
 
   List<CartItem> get items => _items;
 
-  //consider 2% texes
-  double get gamePriceTax => _items.fold(
-      0, (sum, item) => ((sum + item.price * item.quantity * 2.5) / 100));
+  // //consider 2% texes
+  // double get gamePriceTax => _items.fold(
+  //     0, (sum, item) => ((sum + item.price * item.quantity * 2.5) / 100));
 
   //total game price with taxes
-  double get totalPrice => _items.fold(
-      0, (sum, item) => (sum + item.price * item.quantity) + gamePriceTax);
+  double get totalPrice =>
+      _items.fold(0, (sum, item) => (sum + item.price * item.quantity));
 
   int get itemCount {
     return _items.fold(0, (sum, item) => sum + item.quantity);

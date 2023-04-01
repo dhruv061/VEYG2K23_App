@@ -38,6 +38,7 @@ class _NonTechGame_DiplomaState extends State<NonTechGame_Diploma> {
                     ReusableContainer(
                       image: "assets/images/diploma/gullyCricket.jpg",
                       title: "Gully Cricket",
+                      entryfees: "20",
                       heading_peding_Left: 14,
                       heading_peding_Top: 110,
                       function: () {
@@ -48,7 +49,8 @@ class _NonTechGame_DiplomaState extends State<NonTechGame_Diploma> {
                     //VADIC MATHS
                     ReusableContainer(
                       image: "assets/images/diploma/vadicmath.jpg",
-                      title: "Vadic Maths",
+                      title: "Vedic Maths",
+                      entryfees: "10",
                       heading_peding_Left: 14,
                       heading_peding_Top: 110,
                       function: () {
@@ -60,6 +62,7 @@ class _NonTechGame_DiplomaState extends State<NonTechGame_Diploma> {
                     ReusableContainer(
                       image: "assets/images/diploma/oneminutegame.jpg",
                       title: "1-Minute Game",
+                      entryfees: "20",
                       heading_peding_Left: 14,
                       heading_peding_Top: 110,
                       function: () {

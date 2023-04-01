@@ -31,7 +31,7 @@ class _TechnoSketchState extends State<TechnoSketch> {
     //add to cart
     var cart = context.read<CartModel>();
     cart.addItem(
-      CartItem(name: "Techno Sketch", price: 50, quantity: 1),
+      CartItem(name: "TechnoSketch", price: 30, quantity: 1),
     );
   }
 

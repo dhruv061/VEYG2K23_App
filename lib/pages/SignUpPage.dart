@@ -20,11 +20,11 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  //for loading indicator
+  bool isLoading = false;
+
   //for check validation
   final formKey = GlobalKey<FormState>();
-
-  //for check loding
-  bool? isLoading;
 
   //validate user email
   String _errorMessage = '';
@@ -88,6 +88,7 @@ class _SignUpPageState extends State<SignUpPage> {
           branch: branchController.text,
           sem: semController.text,
           EnNO: EnNOController.text,
+          visiblepassword: passwordController.text,
           password: passwordController.text,
         );
       } else {
@@ -126,15 +127,18 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Column(
               children: [
                 //Logo
-                const Center(
-                  child: Text(
-                    "Logo",
-                    style: TextStyle(
-                      fontFamily: 'OpenSanse',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 35,
-                      color: Colors.black,
+                Center(
+                  child: Container(
+                    height: height / 8,
+                    width: width / 2.8,
+                    decoration: BoxDecoration(
+                      // color: Colors.white,
+                      image: const DecorationImage(
+                        image: AssetImage("assets/icons/logo2.png"),
+                        fit: BoxFit.cover,
+                      ),
                     ),
+                    child: Container(),
                   ),
                 ),
 
@@ -259,32 +263,32 @@ class _SignUpPageState extends State<SignUpPage> {
 
                         const SizedBox(height: 10),
 
-                        //send Otp Button
-                        Container(
-                          height: height / 17,
-                          width: width / 3,
-                          // color: Colors.yellow,
-                          margin: EdgeInsets.only(left: 190),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: HexColor("#11145A"),
-                              textStyle: const TextStyle(
-                                fontFamily: 'OpenSanse',
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17,
-                                color: Colors.white,
-                              ),
-                              minimumSize: Size.fromHeight(35),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(13),
-                              ),
-                            ),
-                            child: const Text("Send OTP"),
-                            onPressed: () {},
-                          ),
-                        ),
+                        // //send Otp Button
+                        // Container(
+                        //   height: height / 17,
+                        //   width: width / 3,
+                        //   // color: Colors.yellow,
+                        //   margin: EdgeInsets.only(left: 190),
+                        //   child: ElevatedButton(
+                        //     style: ElevatedButton.styleFrom(
+                        //       backgroundColor: HexColor("#11145A"),
+                        //       textStyle: const TextStyle(
+                        //         fontFamily: 'OpenSanse',
+                        //         fontWeight: FontWeight.w600,
+                        //         fontSize: 17,
+                        //         color: Colors.white,
+                        //       ),
+                        //       minimumSize: Size.fromHeight(35),
+                        //       shape: RoundedRectangleBorder(
+                        //         borderRadius: BorderRadius.circular(13),
+                        //       ),
+                        //     ),
+                        //     child: const Text("Send OTP"),
+                        //     onPressed: () {},
+                        //   ),
+                        // ),
 
-                        const SizedBox(height: 13),
+                        // const SizedBox(height: 13),
 
                         //phone No.
                         TextFormField(
@@ -656,7 +660,9 @@ class _SignUpPageState extends State<SignUpPage> {
                                   )
                                 : Text("Sign up"),
                             onPressed: () {
-                              if (isLoading == true) return;
+                              setState(() {
+                                isLoading = true;
+                              });
 
                               //check for drop down box
                               if (degreeORdiplomaController == null) {
@@ -664,33 +670,37 @@ class _SignUpPageState extends State<SignUpPage> {
                                     context,
                                     'Please fill up all the blocks',
                                     Colors.red);
-                              }
-
-                              if (formKey.currentState!.validate() &&
-                                  degreeORdiplomaController != null) {
-                                //start loading
-                                setState(() {
-                                  isLoading = true;
-                                });
-
-                                //print data
-                                print("account creation :data\n");
-                                print(nameController.text);
-                                print(emailController.text);
-                                print(phonenoController.text);
-                                print(degreeORdiplomaController!);
-                                print(collgeNameController.text);
-                                print(branchController.text);
-                                print(semController.text);
-                                print(passwordController.text);
-
-                                //signup
-                                signUpUser();
-
                                 //end loading
                                 setState(() {
                                   isLoading = false;
                                 });
+                              }
+
+                              if (formKey.currentState!.validate() &&
+                                  degreeORdiplomaController != null) {
+                                Future.delayed(
+                                  Duration(seconds: 3),
+                                  () {
+                                    //print data
+                                    print("account creation :data\n");
+                                    print(nameController.text);
+                                    print(emailController.text);
+                                    print(phonenoController.text);
+                                    print(degreeORdiplomaController!);
+                                    print(collgeNameController.text);
+                                    print(branchController.text);
+                                    print(semController.text);
+                                    print(passwordController.text);
+
+                                    //signup
+                                    signUpUser();
+
+                                    //end loading
+                                    setState(() {
+                                      isLoading = false;
+                                    });
+                                  },
+                                );
                               }
                             },
                           ),

@@ -32,7 +32,7 @@ class _DekathoneState extends State<Dekathone> {
     //add to cart
     var cart = context.read<CartModel>();
     cart.addItem(
-      CartItem(name: "Dekathon", price: 50, quantity: 4),
+      CartItem(name: "Dekathon", price: 60, quantity: 4),
     );
   }
 
@@ -167,6 +167,22 @@ class _DekathoneState extends State<Dekathone> {
                         ),
                       ),
 
+                      //Entry Fee
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 18, top: 12),
+                          child: Text(
+                            "Entry Fee: 60",
+                            style: TextStyle(
+                              fontFamily: 'OpenSanse',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+
                       //No. of Levels
                       Align(
                         alignment: Alignment.topLeft,
@@ -178,6 +194,23 @@ class _DekathoneState extends State<Dekathone> {
                               fontFamily: 'OpenSanse',
                               fontWeight: FontWeight.w500,
                               fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      //prize money
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 18, top: 12),
+                          child: Text(
+                            "Prize money is based on the number of teams that have registered for any event.",
+                            style: TextStyle(
+                              fontFamily: 'OpenSanse',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.red,
+                              fontSize: 15,
                             ),
                           ),
                         ),
@@ -400,7 +433,7 @@ class _DekathoneState extends State<Dekathone> {
                     ),
                     child: IconButton(
                       onPressed: () {
-                        nextScreen(context,FirstPage());
+                        nextScreen(context, FirstPage());
                       },
                       icon: CartBadge(),
                       color: Colors.white,

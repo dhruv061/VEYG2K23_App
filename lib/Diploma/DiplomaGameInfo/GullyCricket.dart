@@ -31,7 +31,7 @@ class _GullyCricketState extends State<GullyCricket> {
     //add to cart
     var cart = context.read<CartModel>();
     cart.addItem(
-      CartItem(name: "Gully Cricket", price: 50, quantity: 1),
+      CartItem(name: "GullyCricket", price: 20, quantity: 1),
     );
   }
 

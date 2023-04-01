@@ -33,7 +33,7 @@ class _TechTainmentState extends State<TechTainment> {
     //add to cart
     var cart = context.read<CartModel>();
     cart.addItem(
-      CartItem(name: "Tech-Tainment", price: 50, quantity: 3),
+      CartItem(name: "Tech-Tainment", price: 60, quantity: 3),
     );
   }
 
@@ -61,7 +61,7 @@ class _TechTainmentState extends State<TechTainment> {
         title: const Padding(
           padding: EdgeInsets.only(left: 35),
           child: Text(
-            "Game Details",
+            "Process",
             style: TextStyle(
                 fontFamily: 'OpenSanse',
                 fontWeight: FontWeight.w600,
@@ -168,6 +168,22 @@ class _TechTainmentState extends State<TechTainment> {
                         ),
                       ),
 
+                      //Entry Fee
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 18, top: 12),
+                          child: Text(
+                            "Entry Fee: 60",
+                            style: TextStyle(
+                              fontFamily: 'OpenSanse',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+
                       //No. of Levels
                       const Align(
                         alignment: Alignment.topLeft,
@@ -179,6 +195,23 @@ class _TechTainmentState extends State<TechTainment> {
                               fontFamily: 'OpenSanse',
                               fontWeight: FontWeight.w500,
                               fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      //prize money
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 18, top: 12),
+                          child: Text(
+                            "Prize money is based on the number of teams that have registered for any event.",
+                            style: TextStyle(
+                              fontFamily: 'OpenSanse',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.red,
+                              fontSize: 15,
                             ),
                           ),
                         ),
@@ -206,7 +239,7 @@ class _TechTainmentState extends State<TechTainment> {
                         child: Padding(
                           padding: EdgeInsets.only(left: 18, top: 5),
                           child: Text(
-                            "\n 1.Prerequisites: basic of C language \n\n 2.Not use smartphone or any other  electric device during game to find solution (except given pc) \n\n 3.Willingness to give a try",
+                            "\nPrerequisites: \n1.basic of C language\n\n2.Not use smartphone or any other  electric device during game to find solution (except given pc) \n\n 3.Willingness to give a try",
                             style: TextStyle(
                               fontFamily: 'OpenSanse',
                               fontWeight: FontWeight.w500,

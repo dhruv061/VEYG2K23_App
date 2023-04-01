@@ -31,9 +31,8 @@ class _TalasshState extends State<Talassh> {
     //add to cart
     var cart = context.read<CartModel>();
     cart.addItem(
-      CartItem(name: "Talassh", price: 50, quantity: 2),
+      CartItem(name: "Talassh", price: 60, quantity: 2),
     );
-    
   }
 
   @override
@@ -183,6 +182,22 @@ class _TalasshState extends State<Talassh> {
                         ),
                       ),
 
+                      //Entry Fee
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 18, top: 12),
+                          child: Text(
+                            "Entry Fee: 60",
+                            style: TextStyle(
+                              fontFamily: 'OpenSanse',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+
                       //No. of Levels
                       Align(
                         alignment: Alignment.topLeft,
@@ -194,6 +209,23 @@ class _TalasshState extends State<Talassh> {
                               fontFamily: 'OpenSanse',
                               fontWeight: FontWeight.w500,
                               fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      //prize money
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 18, top: 12),
+                          child: Text(
+                            "Prize money is based on the number of teams that have registered for any event.",
+                            style: TextStyle(
+                              fontFamily: 'OpenSanse',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.red,
+                              fontSize: 15,
                             ),
                           ),
                         ),
@@ -221,7 +253,7 @@ class _TalasshState extends State<Talassh> {
                         child: Padding(
                           padding: EdgeInsets.only(left: 18, top: 5),
                           child: Text(
-                            "\n1.	Prerequisites: C language\n\n2.Students can use any programming language but C is mandatory \n\n3.Willingness to give a try",
+                            "\nPrerequisites: \n\n1.C language\n\n2.Students can use any programming language but C is mandatory \n\n3.Willingness to give a try",
                             style: TextStyle(
                               fontFamily: 'OpenSanse',
                               fontWeight: FontWeight.w500,
