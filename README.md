@@ -30,7 +30,7 @@ https://drive.google.com/file/d/1Jt6Q13RkuxyQ5tS_2rUdsiWep-FqvAFx/view?usp=share
 
 
 ## 🔗 Links
-[![project](https://img.shields.io/badge/Veyg-App-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://play.google.com/console/u/1/developers/4759960747597818535/app-list?pli=1)
+[![project](https://img.shields.io/badge/Veyg-App-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://play.google.com/store/apps/details?id=com.DhruvMavani.Veyg2k23)
 
 
 
