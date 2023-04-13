@@ -1,11 +1,9 @@
-
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![applogo](https://user-images.githubusercontent.com/96719397/231734594-e69776ad-923a-4494-891a-f01eb248c73a.png)
 
 
 # VEYG 2k23 
 
 The Veyg application was made for the Veyg 2023 event that was organized at my college. This event contains a lot of technical and nontechnical games and events. Using this VEYG app, all the students on my campus as well as another college campus can register themselves in any technical or nontechnical game by paying some amount of fees online.
-
 
 
 ## Features
@@ -56,5 +54,7 @@ If you have any feedback, please reach out to us at mavanidhruv132@gmail.com
 
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/filed1sD8OYFBL6Xtx8grlCrOj_tbuiCe7Csvq/view?usp=share_link)
+
+![full veyg 2k23](https://user-images.githubusercontent.com/96719397/231734228-13b85f84-9590-4aae-8b0b-c283d75790eb.png)
+
 
