@@ -17,7 +17,7 @@ The Veyg application was made for the Veyg 2023 event that was organized at my c
 
 
 ## Demo
-https://drive.google.com/file/d/1Jt6Q13RkuxyQ5tS_2rUdsiWep-FqvAFx/view?usp=share_link
+https://play.google.com/store/apps/details?id=com.DhruvMavani.Veyg2k23
 
 
 ## Tech Stack
